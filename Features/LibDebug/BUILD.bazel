@@ -1,0 +1,15 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load("//rules:lib_info.bzl", "lib_info")
+
+swift_library(
+    name = "LibDebug",
+    srcs = ["LibDebug.swift"],
+    module_name = "LibDebug",
+    visibility = ["//visibility:public"],
+)
+
+lib_info(
+    name = "LibDebug_Info",
+    debug_only = True,
+    entry_points = ["EntryPointDebug"],
+)

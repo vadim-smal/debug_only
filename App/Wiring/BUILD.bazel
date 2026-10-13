@@ -1,0 +1,13 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load(":libs.bzl", "DEFAULT_LIBS", "DEBUG_LIBS")
+
+swift_library(
+    name = "LinkedLibs",
+    srcs = ["LinkedLibs.swift"],
+    module_name = "LinkedLibs",
+    visibility = ["//visibility:public"],
+    deps = DEFAULT_LIBS + select({
+        "//configs:debug_enabled": DEBUG_LIBS,
+        "//conditions:default": [],
+    }),
+)

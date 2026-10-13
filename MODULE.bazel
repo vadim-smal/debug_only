@@ -1,0 +1,6 @@
+module(name = "debug_only_example")
+
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "apple_support", version = "1.21.1", repo_name = "build_bazel_apple_support")
+bazel_dep(name = "rules_swift", version = "2.8.2", repo_name = "build_bazel_rules_swift")
+bazel_dep(name = "rules_apple", version = "3.22.0", repo_name = "build_bazel_rules_apple")

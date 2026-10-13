@@ -1,0 +1,15 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load("//rules:lib_info.bzl", "lib_info")
+
+swift_library(
+    name = "LibA",
+    srcs = ["LibA.swift"],
+    module_name = "LibA",
+    visibility = ["//visibility:public"],
+)
+
+lib_info(
+    name = "LibA_Info",
+    debug_only = False,
+    entry_points = [],
+)

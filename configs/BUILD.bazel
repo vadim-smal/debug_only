@@ -1,0 +1,14 @@
+load("@bazel_skylib//rules:common_settings.bzl", "bool_flag")
+
+package(default_visibility = ["//visibility:public"])
+
+# --with_debug / --with_debug=false (alias in .bazelrc)
+bool_flag(
+    name = "with_debug",
+    build_setting_default = True,
+)
+
+config_setting(
+    name = "debug_enabled",
+    flag_values = {":with_debug": "true"},
+)

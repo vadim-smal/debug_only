@@ -1,0 +1,4 @@
+common --enable_bzlmod
+build --flag_alias=with_debug=//configs:with_debug
+build --apple_platform_type=ios
+build --ios_multi_cpus=sim_arm64
